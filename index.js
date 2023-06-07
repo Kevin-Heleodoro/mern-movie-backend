@@ -1,14 +1,12 @@
-import mongodb from 'mongodb';
-import dotenv from 'dotenv';
-import app from './server.js';
-import MoviesDAO from './dao/moviesDAO.js';
+import mongodb from "mongodb";
+import dotenv from "dotenv";
+import app from "./server.js";
+import MoviesDAO from "./dao/moviesDAO.js";
 
 async function main() {
     dotenv.config();
 
-    const client = new mongodb.MongoClient(
-        process.env.MOVIEREVIEWS_DB_URI
-    );
+    const client = new mongodb.MongoClient(process.env.MOVIEREVIEWS_DB_URI);
 
     const port = process.env.PORT || 8000;
 
