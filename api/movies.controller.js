@@ -1,3 +1,5 @@
+import MoviesDAO from "../dao/moviesDAO.js";
+
 /**
  * Logic for handling requests from the Movies route.
  */
