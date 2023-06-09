@@ -142,6 +142,7 @@ _For more examples, please refer to the [Documentation](https://example.com)_
 -   [x] Logic for server.js
 -   [x] Logic for movies.controller.js
 -   [x] Logic for moviesDAO.js
+-   [x] Installed test suite and created test for /movies endpoint
 
 See the [open issues](https://github.khoury.northeastern.edu/NEU-CS5610-SU23/KevinHeleodoro-backend/issues) for a full list of proposed features (and known issues).
 
