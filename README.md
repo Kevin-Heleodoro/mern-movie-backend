@@ -162,7 +162,7 @@ Project Link: [https://github.khoury.northeastern.edu/NEU-CS5610-SU23/KevinHeleo
 ## Acknowledgments
 
 -   [README badges](https://dev.to/envoy_/150-badges-for-github-pnk)
-    <!-- * []() -->
+-   [SuperTest](https://github.com/ladjs/supertest)
     <!-- * []() -->
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
