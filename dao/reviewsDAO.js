@@ -1,9 +1,14 @@
-import mongodb from "mongodb";
+import mongodb from 'mongodb';
 const ObjectId = mongodb.ObjectId;
 
 let reviews;
 
 export default class ReviewsDAO {
+    /**
+     * Connects to the reviews collection.
+     * @param {*} conn the connection object
+     * @returns
+     */
     static async injectDB(conn) {
         if (reviews) {
             return;
@@ -12,7 +17,7 @@ export default class ReviewsDAO {
         try {
             reviews = await conn
                 .db(process.env.MOVIEREVIEWS_COLLECTION)
-                .collection("reviews");
+                .collection('reviews');
         } catch (e) {
             console.error(`Unable to connect to reviewsDAO, ${e}`);
         }
@@ -25,7 +30,7 @@ export default class ReviewsDAO {
                 user_id: user._id,
                 date,
                 review,
-                movie_id: ObjectId(movieId),
+                movie_id: new ObjectId(movieId),
             };
             return await reviews.insertOne(reviewDoc);
         } catch (e) {
