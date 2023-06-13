@@ -6,7 +6,8 @@
   "type": "module",
   "scripts": {
     "test": "mocha --reporter spec --exit",
-    "start": "node index.js"
+    "start": "node index.js",
+    "dev": "nodemon index.js"
   },
   "keywords": [],
   "author": "",
@@ -20,6 +21,7 @@
   "devDependencies": {
     "chai": "^4.3.7",
     "mocha": "^10.2.0",
+    "nodemon": "^2.0.22",
     "supertest": "^6.3.3"
   }
 }

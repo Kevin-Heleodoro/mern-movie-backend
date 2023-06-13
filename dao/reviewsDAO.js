@@ -23,6 +23,14 @@ export default class ReviewsDAO {
         }
     }
 
+    /**
+     * Adds a new review to the reviews collection.
+     * @param {string} movieId
+     * @param {string} user
+     * @param {string} review
+     * @param {string} date
+     * @returns
+     */
     static async addReview(movieId, user, review, date) {
         try {
             const reviewDoc = {
@@ -39,7 +47,28 @@ export default class ReviewsDAO {
         }
     }
 
-    static async updateReview(reviewId, user, review, date) {}
+    /**
+     * Updates an existing review in the reviews collection
+     * @param {string} reviewId
+     * @param {string} user
+     * @param {string} review
+     * @param {string} date
+     */
+    static async updateReview(reviewId, user, review, date) {
+        try {
+            const query = { _id: new ObjectId(reviewId) };
+            const update = { $set: { review: review, date: new Date() } };
+            const response = await reviews.updateOne(query, update);
+
+            if (response.modifiedCount == 0) {
+                throw Error(`Update unsuccessful`);
+            }
+
+            return response;
+        } catch (e) {
+            console.error(`Unable to update review: ${e}`);
+        }
+    }
 
     static async deleteReview(reviewId) {}
 }
