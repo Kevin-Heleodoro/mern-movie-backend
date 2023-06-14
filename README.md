@@ -107,7 +107,7 @@ Ensure you have the latest versions of MongoDB Community Edition and Compass ins
 
 1. Start the server
     ```sh
-    npm start
+    yarn dev
     ```
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>

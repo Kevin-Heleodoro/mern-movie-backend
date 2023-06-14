@@ -79,7 +79,35 @@ export default class ReviewsController {
             res.status(500).json({ error: e });
         }
     }
+
+    /**
+     * Deletes an existing review within the database.
+     * @param {*} req the request body
+     * @param {*} res the response body
+     * @param {*} next middleware associated with the call
+     */
     static async apiDeleteReview(req, res, next) {
-        //TODO:
+        try {
+            const reviewId = req.body.review_id;
+            const userId = req.body.user_id;
+
+            const deleteResponse = await ReviewsDAO.deleteReview(
+                reviewId,
+                userId
+            );
+
+            var { error } = deleteResponse;
+
+            if (error) {
+                res.status(500).json({ error: `Unable to delete review` });
+            } else {
+                res.json({
+                    status: 'success',
+                    response: deleteResponse,
+                });
+            }
+        } catch (e) {
+            res.status(500).json({ error: e });
+        }
     }
 }

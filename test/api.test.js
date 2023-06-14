@@ -4,6 +4,8 @@ import app from '../index.js';
 
 const requestWithSuperTest = supertest(app);
 
+afterEach(() => {});
+
 describe('Testing GET /movies endpoint', function () {
     it('responds with a valid HTTP status code and number of movies', async function () {
         const DEFAULT_MOVIES_PER_PAGE = 20;

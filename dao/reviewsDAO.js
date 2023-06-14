@@ -70,5 +70,17 @@ export default class ReviewsDAO {
         }
     }
 
-    static async deleteReview(reviewId) {}
+    static async deleteReview(reviewId) {
+        try {
+            const query = { _id: new ObjectId(reviewId) };
+            const response = await reviews.deleteOne(query);
+
+            if (response.deletedCount == 0) {
+                throw Error(`Delete unsuccessful`);
+            }
+            return response;
+        } catch (e) {
+            console.error(`Unable to delete review: ${e}`);
+        }
+    }
 }
