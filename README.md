@@ -87,10 +87,11 @@ Ensure you have the latest version of yarn installed.
 npm install -g yarn
 ```
 
-Ensure you have the latest versions of MongoDB Community Edition and Compass installed.
+Ensure you have the latest versions of the following installed:
 
--   [Community Edition](https://docs.mongodb.com/manual/administration/install-community/)
--   [Compass](https://docs.mongodb.com/compass/current/install/)
+-   [MongoDB Community Edition](https://docs.mongodb.com/manual/administration/install-community/)
+-   [MongoDB Compass](https://docs.mongodb.com/compass/current/install/)
+-   [Insonmia](https://insomnia.rest/)
 
 ### Installation
 
@@ -125,17 +126,6 @@ _For more examples, please refer to the [Documentation](https://example.com)_
 
 ## Roadmap
 
-### Part 1
-
--   [x] Set up backend directory
--   [x] Install dependencies
--   [x] Create base api and dao files
--   [x] Restore dump file for movies database
-
-![Directory Structure][backend-structure-screenshot]
-
-![MongoDB Compass][mongo-restore-compass-screenshot]
-
 ### Part 2
 
 -   [x] Logic for index.js
@@ -152,6 +142,22 @@ _For more examples, please refer to the [Documentation](https://example.com)_
     -   Update a valid review
     -   Update an invalid review
     -   Delete a review
+
+![MongoDB Compass - Review Added][mongo-add-review-compass-screenshot]
+![Insomnia - Successful Update][insomnia-success-review-PUT-screenshot]
+![Insomnia - Successful Delete][insomnia-success-review-DELETE-screenshot]
+![Jest - Successful API Tests][api-test-succeess-screenshot]
+
+### Part 1
+
+-   [x] Set up backend directory
+-   [x] Install dependencies
+-   [x] Create base api and dao files
+-   [x] Restore dump file for movies database
+
+![Directory Structure][backend-structure-screenshot]
+
+![MongoDB Compass][mongo-restore-compass-screenshot]
 
 See the [open issues](https://github.khoury.northeastern.edu/NEU-CS5610-SU23/KevinHeleodoro-backend/issues) for a full list of proposed features (and known issues).
 
@@ -181,11 +187,15 @@ Project Link: [https://github.khoury.northeastern.edu/NEU-CS5610-SU23/KevinHeleo
 
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: https://linkedin.com/in/kevin-heleodoro
-[backend-structure-screenshot]: img/readme/MERN_directory_screenshot.png
-[mongo-restore-compass-screenshot]: img/readme/mongodb_compass_screenshot.png
 [Node.js]: https://img.shields.io/badge/Node.js-43853D?style=for-the-badge&logo=node.js&logoColor=white
 [Node-url]: https://nodejs.org/en
 [Express.js]: https://img.shields.io/badge/Express.js-404D59?style=for-the-badge
 [Express-url]: https://expressjs.com/
 [MongoDB]: https://img.shields.io/badge/MongoDB-4EA94B?style=for-the-badge&logo=mongodb&logoColor=white
 [Mongo-url]: https://www.mongodb.com/docs/
+[backend-structure-screenshot]: img/readme/MERN_directory_screenshot.png
+[mongo-restore-compass-screenshot]: img/readme/mongodb_compass_screenshot.png
+[mongo-add-review-compass-screenshot]: img/readme/mongo-add-review-compass-screenshot.png
+[insomnia-success-review-PUT-screenshot]: img/readme/insomnia-success-review-PUT-screenshot.png
+[insomnia-success-review-DELETE-screenshot]: img/readme/insomnia-success-review-DELETE-screenshot.png
+[api-test-succeess-screenshot]: img/readme/api-test-succeess-screenshot.png
