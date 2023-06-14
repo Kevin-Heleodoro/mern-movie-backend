@@ -142,7 +142,16 @@ _For more examples, please refer to the [Documentation](https://example.com)_
 -   [x] Logic for server.js
 -   [x] Logic for movies.controller.js
 -   [x] Logic for moviesDAO.js
--   [x] Installed test suite and created test for /movies endpoint
+-   [x] Logic for reviews.controller.js
+-   [x] Logic for reviewsDAO.js
+-   [x] Installed test suite and created following tests:
+    -   Get first 20 movies
+    -   Get 1 movie by id
+    -   Get distinct ratings
+    -   Post a new review
+    -   Update a valid review
+    -   Update an invalid review
+    -   Delete a review
 
 See the [open issues](https://github.khoury.northeastern.edu/NEU-CS5610-SU23/KevinHeleodoro-backend/issues) for a full list of proposed features (and known issues).
 

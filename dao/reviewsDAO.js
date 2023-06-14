@@ -56,17 +56,18 @@ export default class ReviewsDAO {
      */
     static async updateReview(reviewId, user, review, date) {
         try {
-            const query = { _id: new ObjectId(reviewId) };
+            const query = { _id: new ObjectId(reviewId), user_id: user._id };
             const update = { $set: { review: review, date: new Date() } };
             const response = await reviews.updateOne(query, update);
 
             if (response.modifiedCount == 0) {
-                throw Error(`Update unsuccessful`);
+                throw Error(`Invalid review id or user id`);
             }
 
             return response;
         } catch (e) {
             console.error(`Unable to update review: ${e}`);
+            return { error: e };
         }
     }
 
@@ -76,11 +77,12 @@ export default class ReviewsDAO {
             const response = await reviews.deleteOne(query);
 
             if (response.deletedCount == 0) {
-                throw Error(`Delete unsuccessful`);
+                throw Error(`Invalid review id`);
             }
             return response;
         } catch (e) {
             console.error(`Unable to delete review: ${e}`);
+            return { error: e };
         }
     }
 }
