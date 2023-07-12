@@ -12,12 +12,13 @@
 
   <p align="center">
     This project serves as the back end for the MERN Project. It consists of an Express server that interacts with a MongoDB database to provide CRUD functionality to the front end. There will be multiple stages of the implementation of the backend which will be documented in chronological order.
+    Link to frontend: <https://github.khoury.northeastern.edu/NEU-CS5610-SU23/KevinHeleodoro-frontend>
     <br />
     <a href="https://github.khoury.northeastern.edu/NEU-CS5610-SU23/KevinHeleodoro-backend"><strong>Explore the docs »</strong></a>
     <br />
     <br />
-    <!-- <a href="https://github.com/github_username/repo_name">View Demo</a>
-    · -->
+    <a href="https://movietime-backend-kheleodoro.uw.r.appspot.com/api/v1/movies">View Demo: Get all movies</a>
+    ·
     <a href="https://github.khoury.northeastern.edu/NEU-CS5610-SU23/KevinHeleodoro-backend/issues">Report Bug</a>
     ·
     <a href="https://github.khoury.northeastern.edu/NEU-CS5610-SU23/KevinHeleodoro-backend/issues">Request Feature</a>
@@ -125,6 +126,15 @@ _For more examples, please refer to the [Documentation](https://example.com)_
 <!-- ROADMAP -->
 
 ## Roadmap
+
+### Part 6
+
+-   [x] Created instance of database on MongoDB Atlas.
+-   [x] Deployed backend to Google Cloud
+
+### Part 5
+
+-   [x] Logic for Favorites route
 
 ### Part 2
 
