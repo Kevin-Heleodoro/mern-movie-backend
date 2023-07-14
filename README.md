@@ -17,7 +17,7 @@
     <a href="https://github.khoury.northeastern.edu/NEU-CS5610-SU23/KevinHeleodoro-backend"><strong>Explore the docs »</strong></a>
     <br />
     <br />
-    <a href="https://movietime-backend-kheleodoro.uw.r.appspot.com/api/v1/movies">View Demo: Get all movies</a>
+    <a href="https://movietime-backend-heleo.uw.r.appspot.com/api/v1/movies">View Demo: Get all movies</a>
     ·
     <a href="https://github.khoury.northeastern.edu/NEU-CS5610-SU23/KevinHeleodoro-backend/issues">Report Bug</a>
     ·
