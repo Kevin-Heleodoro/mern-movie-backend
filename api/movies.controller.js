@@ -1,4 +1,4 @@
-import MoviesDAO from "../dao/moviesDAO.js";
+import MoviesDAO from '../dao/moviesDAO.js';
 
 /**
  * Logic for handling requests from the Movies route.
@@ -53,11 +53,28 @@ export default class MoviesController {
             let movie = await MoviesDAO.getMovieById(id);
 
             if (!movie) {
-                res.status(404).json({ error: "not found" });
+                res.status(404).json({ error: 'not found' });
                 return;
             }
 
             res.json(movie);
+        } catch (e) {
+            console.log(`API, ${e}`);
+            res.status(500).json({ error: e });
+        }
+    }
+
+    static async apiGetMoviesByIds(req, res, next) {
+        try {
+            let { ids } = req.body;
+            let movies = await MoviesDAO.getMoviesByIds(ids);
+
+            if (!movies) {
+                res.status(404).json({ error: 'not found' });
+                return;
+            }
+
+            res.json(movies);
         } catch (e) {
             console.log(`API, ${e}`);
             res.status(500).json({ error: e });

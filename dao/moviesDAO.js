@@ -1,4 +1,4 @@
-import mongodb from "mongodb";
+import mongodb from 'mongodb';
 const ObjectId = mongodb.ObjectId;
 
 let movies;
@@ -12,9 +12,9 @@ export default class MoviesDAO {
         try {
             movies = await connection
                 .db(process.env.MOVIEREVIEWS_COLLECTION)
-                .collection("movies");
+                .collection('movies');
         } catch (e) {
-            console.error(`Unable to connecto to MoviesDAO: ${e}`);
+            console.error(`Unable to connect to MoviesDAO: ${e}`);
         }
     }
 
@@ -25,10 +25,10 @@ export default class MoviesDAO {
     } = {}) {
         let query;
         if (filters) {
-            if ("title" in filters) {
-                query = { $text: { $search: filters["title"] } };
-            } else if ("rated" in filters) {
-                query = { rated: { $eq: filters["rated"] } };
+            if ('title' in filters) {
+                query = { $text: { $search: filters['title'] } };
+            } else if ('rated' in filters) {
+                query = { rated: { $eq: filters['rated'] } };
             }
         }
 
@@ -58,10 +58,10 @@ export default class MoviesDAO {
                     },
                     {
                         $lookup: {
-                            from: "reviews",
-                            localField: "_id",
-                            foreignField: "movie_id",
-                            as: "reviews",
+                            from: 'reviews',
+                            localField: '_id',
+                            foreignField: 'movie_id',
+                            as: 'reviews',
                         },
                     },
                 ])
@@ -72,10 +72,29 @@ export default class MoviesDAO {
         }
     }
 
+    static async getMoviesByIds(ids) {
+        try {
+            let idArray = ids.map((i) => {
+                let id = new ObjectId(i);
+                console.log(id);
+                return id;
+            });
+
+            let query = { _id: { $in: idArray } };
+            let options = { projection: { _id: 1, title: 1, poster: 1 } };
+            let cursor = await movies.find(query, options);
+
+            return await cursor.toArray();
+        } catch (e) {
+            console.error(`Unable to get movies by IDs, ${e}`);
+            throw e;
+        }
+    }
+
     static async getRatings() {
         let ratings = [];
         try {
-            ratings = await movies.distinct("rated");
+            ratings = await movies.distinct('rated');
             return ratings;
         } catch (e) {
             console.error(`Unable to get ratings, ${e}`);
