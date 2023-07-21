@@ -66,6 +66,7 @@ export default class MoviesController {
 
     static async apiGetMoviesByIds(req, res, next) {
         try {
+            console.log(req.body);
             let { ids } = req.body;
             let movies = await MoviesDAO.getMoviesByIds(ids);
 

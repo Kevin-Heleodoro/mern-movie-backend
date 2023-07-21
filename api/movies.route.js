@@ -7,7 +7,7 @@ const router = express.Router();
 
 router.route('/').get(MoviesController.apiGetMovies);
 router.route('/id/:id').get(MoviesController.apiGetMovieById);
-router.route('/collection').get(MoviesController.apiGetMoviesByIds);
+router.route('/collection').post(MoviesController.apiGetMoviesByIds);
 router.route('/ratings').get(MoviesController.apiGetRatings);
 
 router.route('/review').post(ReviewsController.apiPostReview);
