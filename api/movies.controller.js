@@ -45,7 +45,7 @@ export default class MoviesController {
      * @param {*} req the request body
      * @param {*} res the response body
      * @param {*} next middleware associated with this call
-     * @returns breaks out of function if the id is invalid
+     * @returns breaks out of function if the id is invalid. If valid response, it return full movie document.
      */
     static async apiGetMovieById(req, res, next) {
         try {
@@ -64,9 +64,15 @@ export default class MoviesController {
         }
     }
 
+    /**
+     *
+     * @param {*} req the request body
+     * @param {*} res the respose body
+     * @param {*} next middleware associated with this call
+     * @returns Array of movie documents containing id, title, and poster.
+     */
     static async apiGetMoviesByIds(req, res, next) {
         try {
-            console.log(req.body);
             let { ids } = req.body;
             let movies = await MoviesDAO.getMoviesByIds(ids);
 
