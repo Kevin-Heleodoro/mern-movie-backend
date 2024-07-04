@@ -74,10 +74,7 @@ export default class MoviesDAO {
 
     static async getMoviesByIds(ids) {
         try {
-            console.log({ ids });
             let idArray = ids.map((i) => new ObjectId(i));
-
-            console.log({ idArray });
             let query = { _id: { $in: idArray } };
             let options = { projection: { _id: 1, title: 1, poster: 1 } };
             let cursor = await movies.find(query, options);

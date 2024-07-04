@@ -20,6 +20,7 @@ export default class FavoritesDAO {
                 { $set: { favorites } },
                 { upsert: true }
             );
+            console.log(updateResponse);
 
             return updateResponse;
         } catch (e) {
